@@ -1,0 +1,20 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "react": "^15.3.1",
+    "react-dom": "^15.3.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "watchify ./src/app.js -o ./build/bundle.js -t [ babelify --presets [ es2015 react ] ] -v",
+    "browsersync": "browser-sync start --server --files 'index.html, build'",
+    "dev": "npm start | npm run browsersync",
+    "build": "browserify ./src/app.js -o ./build/bundle.js -t [ babelify --presets [ es2015 react ] ]"
+  },
+  "author": "",
+  "license": "ISC"
+}
