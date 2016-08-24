@@ -20,6 +20,10 @@ var allPosts = _posts.map(function(item) {
   );
 });
 
+var styles = {
+  marginTop: '10px'
+};
+
 var Posts = React.createClass({
   render: function() {
     return (

@@ -7,8 +7,15 @@ var Post = React.createClass({
 
     return (
       <div className="row">
-        <h2 className="medium-12">{title}</h2>
+        <h5 className="medium-12 subheader">{title}</h5>
         <div className="medium-12">{text}</div>
+        <div className="medium-12">
+        <div className="small button-group float-right">
+            <a className="secondary button">Edit</a>
+            <a className="alert button">Delete</a>
+          </div>
+        </div>
+        <hr/>
       </div>
     );
   }
