@@ -1,4 +1,5 @@
 var React = require('react');
+var Link = require('react-router').Link;
 
 var Header = React.createClass({
   render: function() {
@@ -10,7 +11,11 @@ var Header = React.createClass({
               </div>
               <div className="top-bar-right">
                 <ul className="menu">
-                  <li><button type="button" className="button">Create Post</button></li>
+                  <li>
+                    <Link to="/create">
+                      <button type="button" className="button">Create A Post</button>
+                    </Link>
+                  </li>
                 </ul>
               </div>
             </div>;
