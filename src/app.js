@@ -6,8 +6,8 @@ var Route = require('react-router').Route;
 var Link = require('react-router').Link;
 var hashHistory = require('react-router').hashHistory;
 
+var Create = require('./form/Create');
 var HomePage = require('./HomePage');
-var Create = require('./Create');
 var NoMatch = require('./NoMatch');
 
 ReactDom.render((

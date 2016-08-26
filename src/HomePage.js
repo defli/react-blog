@@ -1,7 +1,7 @@
 var React = require('react');
 var Header = require('./Header');
 var Posts = require('./Posts');
-var Create = require('./Create');
+var Create = require('./form/Create');
 
 var HomePage = React.createClass({
   render: function() {
