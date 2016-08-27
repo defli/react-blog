@@ -1,6 +1,6 @@
 var React = require('react');
 
-var TitleForm = React.createClass({
+var DescriptionForm = React.createClass({
   getInitialState: function() {
     return {
       isValid: true
@@ -22,18 +22,19 @@ var TitleForm = React.createClass({
     });
 
     this.props.changeState(valid);
+    this.props.handleDescValue(val);
   },
 
   render: function() {
     return (
       <div>
-        <input type="text" onChange={this._changed} placeholder="Title Form"/>
+        <textarea onChange={this._changed} placeholder="Description Area"></textarea>
         <div style={ {display: this.state.isValid ? 'none' : 'block' } } className="callout alert">
-          Title field should not be empty...
+          Description field should not be empty...
         </div>
       </div>
     );
   }
 });
 
-module.exports = TitleForm;
+module.exports = DescriptionForm;
