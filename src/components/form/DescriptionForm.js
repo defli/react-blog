@@ -1,13 +1,14 @@
-var React = require('react');
+import React from 'react';
 
-var DescriptionForm = React.createClass({
-  getInitialState: function() {
-    return {
-      isValid: true
-    }
-  },
+class DescriptionForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isValid: true,
+    };
+  }
 
-  _changed: function(event) {
+  _changed(event) {
     var val = event.target.value;
     var valid;
 
@@ -23,18 +24,18 @@ var DescriptionForm = React.createClass({
 
     this.props.changeState(valid);
     this.props.handleDescValue(val);
-  },
+  }
 
-  render: function() {
+  render() {
     return (
       <div>
-        <textarea onChange={this._changed} placeholder="Description Area"></textarea>
+        <textarea onChange={this._changed.bind(this)} placeholder="Description Area"></textarea>
         <div style={ {display: this.state.isValid ? 'none' : 'block' } } className="callout alert">
           Description field should not be empty...
         </div>
       </div>
     );
   }
-});
+};
 
-module.exports = DescriptionForm;
+export default DescriptionForm;

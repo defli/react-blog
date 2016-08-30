@@ -1,4 +1,4 @@
-var PostConstants = {
+const PostConstants = {
   POST_CREATE: 'POST_CREATE'
 };
 

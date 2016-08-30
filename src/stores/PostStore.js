@@ -1,9 +1,9 @@
-var AppDispatcher = require('../dispatcher/AppDispatcher');
-var EventEmitter = require('events').EventEmitter;
-var PostConstants = require('../constants/PostConstants');
-var assign = require('object-assign');
+import AppDispatcher from '../dispatcher/AppDispatcher';
+import { EventEmitter }  from 'events';
+import PostConstants from '../constants/PostConstants';
+import assign from 'object-assign';
 
-var CHANGE_EVENT = 'change';
+const CHANGE_EVENT = 'change';
 
 var _posts = [
   {
@@ -89,4 +89,4 @@ var PostStore = assign({}, EventEmitter.prototype, {
 
 });
 
-module.exports = PostStore;
+export default PostStore;

@@ -1,6 +1,6 @@
-var React = require('react');
-var Post = require('./post');
-var PostStore = require('../stores/PostStore');
+import React from 'react';
+import Post from './Post';
+import PostStore from '../stores/PostStore';
 
 function getPosts(_posts) {
 
@@ -19,28 +19,28 @@ var styles = {
 };
 
 var Posts = React.createClass({
-  getInitialState: function() {
+  getInitialState() {
     var _posts = PostStore.getAll();
     return {
       _posts: _posts
     };
   },
 
-  _onChange: function() {
+  _onChange() {
     this.setState({
       _posts: PostStore.getAll()
-    })
+    });
   },
 
-  componentDidMount: function() {
+  componentDidMount() {
     PostStore.addChangeListener(this._onChange);
   },
 
-  componentWillUnmount: function() {
+  componentWillUnmount() {
     PostStore.removeChangeListener(this._onChange);
   },
 
-  render: function() {
+  render() {
     return (
       <div>
         {getPosts(this.state._posts)}

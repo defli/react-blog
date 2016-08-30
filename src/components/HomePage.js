@@ -1,16 +1,16 @@
-var React = require('react');
-var Header = require('./header');
-var Posts = require('./posts');
-var Create = require('./form/Create');
+import React from 'react';
+import Header from './Header';
+import Posts from './Posts';
+import Create from './form/Create';
 
-var HomePage = React.createClass({
-  render: function() {
+class HomePage extends React.Component {
+  render() {
     return <div>
         <Header />
         { this.props.children }
         <Posts />
       </div>;
   }
-});
+};
 
-module.exports = HomePage;
+export default HomePage;

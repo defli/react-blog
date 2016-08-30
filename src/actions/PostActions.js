@@ -5,7 +5,7 @@
 var AppDispatcher = require('../dispatcher/AppDispatcher');
 var PostConstants = require('../constants/PostConstants');
 
-var PostActions = {
+const PostActions = {
 
   /**
    * @param  {string} text
@@ -19,4 +19,4 @@ var PostActions = {
 
 };
 
-module.exports = PostActions;
+export default PostActions;

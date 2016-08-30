@@ -1,11 +1,11 @@
-var React = require('react');
+import React from 'react';
 
 var NoMatch = React.createClass({
-  render: function() {
+  render() {
     return (
       <h2>No Match!</h2>
     );
   }
 });
 
-module.exports = NoMatch;
+export default NoMatch;

@@ -1,15 +1,14 @@
-var React = require('react');
-var ReactDom = require('react-dom');
+import React from 'react';
+import ReactDom from 'react-dom';
 
-var Router = require('react-router').Router;
-var Route = require('react-router').Route;
-var Link = require('react-router').Link;
-var hashHistory = require('react-router').hashHistory;
+import { Router } from 'react-router';
+import { Route } from 'react-router';
+import { Link } from 'react-router';
+import { hashHistory } from 'react-router';
 
-var Create = require('./components/form/Create');
-var HomePage = require('./components/HomePage');
-var NoMatch = require('./components/NoMatch');
-
+import Create from './components/form/Create';
+import HomePage from './components/HomePage';
+import NoMatch from './components/NoMatch';
 
 ReactDom.render((
   <Router history={hashHistory}>
