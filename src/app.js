@@ -7,6 +7,8 @@ import { Link } from 'react-router';
 import { hashHistory } from 'react-router';
 
 import Create from './components/form/Create';
+import Login from './components/form/Login';
+
 import HomePage from './components/HomePage';
 import NoMatch from './components/NoMatch';
 
@@ -14,6 +16,7 @@ ReactDom.render((
   <Router history={hashHistory}>
     <Route path="/" component={HomePage}>
       <Route path="create" component={Create} />
+      <Route path="login" component={Login} />
     </Route>
     <Route path="*" component={NoMatch}/>
   </Router>

@@ -8,10 +8,10 @@ class Post extends React.Component {
 
       return (
         <div className="row">
-          <h5 className="medium-12 subheader">{title}</h5>
-          <div className="medium-12">{text}</div>
-          <div className="medium-12">
-          <div className="small button-group float-right">
+          <h5 className="col-sm-12">{title}</h5>
+          <div className="col-sm-12">{text}</div>
+          <div className="col-sm-12">
+          <div className="">
               <a className="secondary button">Edit</a>
               <a className="alert button">Delete</a>
             </div>

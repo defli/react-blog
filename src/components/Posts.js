@@ -42,7 +42,7 @@ var Posts = React.createClass({
 
   render() {
     return (
-      <div>
+      <div className="container">
         {getPosts(this.state._posts)}
       </div>
     );

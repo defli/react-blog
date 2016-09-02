@@ -4,22 +4,16 @@ import { Link } from 'react-router';
 class Header extends React.Component {
   render() {
     return (
-      <div className="top-bar">
-        <div className="top-bar-left">
-          <ul className="dropdown menu" data-dropdown-menu>
-            <li className="menu-text">My First React Blog Example</li>
-          </ul>
+      <nav className="navbar navbar-default">
+        <div className="container-fluid">
+          <div className="navbar-header">
+            <a className="navbar-brand" href="#">Quotes</a>
+          </div>
+          <div className="navbar-form navbar-right">
+            <a href="/#login" className="btn btn-default">Login</a>
+          </div>
         </div>
-        <div className="top-bar-right">
-          <ul className="menu">
-            <li>
-              <Link to="/create">
-                <button type="button" className="button">Create A Post</button>
-              </Link>
-            </li>
-          </ul>
-        </div>
-      </div>
+      </nav>
     );
   }
 };
