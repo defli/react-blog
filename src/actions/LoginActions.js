@@ -42,7 +42,7 @@ const LoginActions = {
    */
   password_invalid: function(value) {
     AppDispatcher.handleViewAction({
-      actionType: LoginConstants.PASSWORD_UNVALID,
+      actionType: LoginConstants.PASSWORD_INVALID,
       value: value
     });
   }
