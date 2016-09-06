@@ -1,8 +1,10 @@
 
 import React, {Component} from 'react';
+import firebase from 'firebase';
 import TextInput from './TextInput';
 import PasswordInput from './PasswordInput';
 import LoginStore from '../../stores/LoginStore';
+import LoginActions from '../../actions/LoginActions';
 
 class Login extends Component {
 
@@ -24,7 +26,7 @@ class Login extends Component {
     }
 
     _this.setState({
-      isValid: isValid  
+      isValid: isValid
     });
 
     console.log(model);
@@ -36,12 +38,31 @@ class Login extends Component {
   }
 
   componentWillUnmount() {
-    LoginStore.removeChangeListener(this._onChange);
+    LoginStore.removeChangeListener(this._onChange.bind(this));
   }
 
+  submitHandler(event) {
+    event.preventDefault();
+    let model = LoginStore.getModel();
+    let email = model.email;
+    let password = model.password;
 
-  submitHandler() {
-      console.log('ok');
+    firebase.auth().signInWithEmailAndPassword(email, password)
+    .then(function(success) {
+      console.log('logged_in');
+      LoginActions.logged_in(123);
+    })
+    .catch(function(error) {
+      // Handle Errors here.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+
+      console.log(errorCode);
+      if (!errorCode) {
+        LoginActions.logged_in(123);
+      }
+      // ...
+    });
   }
 
   render() {

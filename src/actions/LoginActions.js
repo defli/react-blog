@@ -10,6 +10,16 @@ const LoginActions = {
   /**
    * @param  {string} text
    */
+  logged_in: function(uid) {
+    AppDispatcher.handleViewAction({
+      actionType: LoginConstants.LOGGED_IN,
+      uid: uid
+    });
+  },
+
+  /**
+   * @param  {string} text
+   */
   email_valid: function(value) {
     AppDispatcher.handleViewAction({
       actionType: LoginConstants.EMAIL_VALID,

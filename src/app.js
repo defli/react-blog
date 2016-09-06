@@ -11,6 +11,15 @@ import Login from './components/form/Login';
 import HomePage from './components/HomePage';
 import NoMatch from './components/NoMatch';
 
+let config = {
+  apiKey: "AIzaSyAM82T0w52m2cia8t8xc5JGf8JJJzV1ctk",
+  authDomain: "react-blog-b49f0.firebaseapp.com",
+  databaseURL: "https://react-blog-b49f0.firebaseio.com",
+  storageBucket: "react-blog-b49f0.appspot.com",
+};
+firebase.initializeApp(config);
+
+
 ReactDom.render((
   <Router history={hashHistory}>
     <Route path="/" component={HomePage}>
