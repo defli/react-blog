@@ -1,7 +1,6 @@
 import AppDispatcher from '../dispatcher/AppDispatcher';
 import { EventEmitter }  from 'events';
 import LoginConstants from '../constants/LoginConstants';
-import assign from 'object-assign';
 
 const CHANGE_EVENT = 'change';
 const LOGGED_IN_EVENT = 'loggedin';
@@ -12,49 +11,49 @@ var _model = {
   password: ''
 };
 
-var LoginStore = assign({}, EventEmitter.prototype, {
+var LoginStore = Object.assign({}, EventEmitter.prototype, {
 
   /**
    * Get the entire collection of TODOs.
    * @return {object}
    */
-  getModel: function() {
+  getModel() {
     return _model;
   },
 
-  emitChange: function(evt) {
+  emitChange(evt) {
     this.emit(evt);
   },
 
   /**
    * @param {function} callback
    */
-  addChangeListener: function(callback) {
+  addChangeListener(callback) {
     this.on(CHANGE_EVENT, callback);
   },
 
   /**
    * @param {function} callback
    */
-  removeChangeListener: function(callback) {
+  removeChangeListener(callback) {
     this.removeListener(CHANGE_EVENT, callback);
   },
 
   /**
    * @param {function} callback
    */
-  addLoggedInListener: function(callback) {
+  addLoggedInListener(callback) {
     this.on(LOGGED_IN_EVENT, callback);
   },
 
   /**
    * @param {function} callback
    */
-  removeLoggedInListener: function(callback) {
+  removeLoggedInListener(callback) {
     this.removeListener(LOGGED_IN_EVENT, callback);
   },
 
-  dispatcherIndex: AppDispatcher.register(function(payload) {
+  dispatcherIndex: AppDispatcher.register((payload) => {
     var action = payload.action;
 
     switch(action.actionType) {

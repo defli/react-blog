@@ -1,7 +1,6 @@
 import AppDispatcher from '../dispatcher/AppDispatcher';
 import { EventEmitter }  from 'events';
 import PostConstants from '../constants/PostConstants';
-import assign from 'object-assign';
 
 const CHANGE_EVENT = 'change';
 
@@ -42,35 +41,35 @@ function destroy(id) {
   delete _posts[id];
 }
 
-var PostStore = assign({}, EventEmitter.prototype, {
+var PostStore = Object.assign({}, EventEmitter.prototype, {
 
   /**
    * Get the entire collection of TODOs.
    * @return {object}
    */
-  getAll: function() {
+  getAll() {
     return _posts;
   },
 
-  emitChange: function() {
+  emitChange() {
     this.emit(CHANGE_EVENT);
   },
 
   /**
    * @param {function} callback
    */
-  addChangeListener: function(callback) {
+  addChangeListener(callback) {
     this.on(CHANGE_EVENT, callback);
   },
 
   /**
    * @param {function} callback
    */
-  removeChangeListener: function(callback) {
+  removeChangeListener(callback) {
     this.removeListener(CHANGE_EVENT, callback);
   },
 
-  dispatcherIndex: AppDispatcher.register(function(payload) {
+  dispatcherIndex: AppDispatcher.register((payload) => {
     var action = payload.action;
 
     switch(action.actionType) {

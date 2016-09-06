@@ -1,10 +1,10 @@
 import React from 'react';
 import Post from './Post';
-import PostStore from '../stores/PostStore';
+import PostStore from '../../stores/PostStore';
 
 function getPosts(_posts) {
 
-  var allPosts = _posts.map(function(item) {
+  var allPosts = _posts.map((item) => {
     return (
       <Post key= {Math.random()} title={item.title} text={item.text}/>
     );
@@ -12,11 +12,6 @@ function getPosts(_posts) {
 
   return allPosts;
 }
-
-
-var styles = {
-  marginTop: '10px'
-};
 
 var Posts = React.createClass({
   getInitialState() {

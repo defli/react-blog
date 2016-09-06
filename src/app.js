@@ -3,12 +3,11 @@ import ReactDom from 'react-dom';
 
 import { Router, Route, Link, hashHistory, IndexRoute } from 'react-router';
 
-import Posts from './components/Posts';
+import Posts from './components/Home/Posts';
 
-import Create from './components/form/Create';
-import Login from './components/form/Login';
+import Login from './components/Login/Login';
 
-import HomePage from './components/HomePage';
+import Layout from './components/Layout';
 import NoMatch from './components/NoMatch';
 
 let config = {
@@ -22,9 +21,8 @@ firebase.initializeApp(config);
 
 ReactDom.render((
   <Router history={hashHistory}>
-    <Route path="/" component={HomePage}>
+    <Route path="/" component={Layout}>
       <IndexRoute component={Posts}/>
-      <Route path="create" component={Create} />
       <Route path="login" component={Login} />
     </Route>
     <Route path="*" component={NoMatch}/>

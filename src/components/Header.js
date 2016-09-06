@@ -1,7 +1,7 @@
 import React from 'react';
 import LoginStore from '../stores/LoginStore';
-import HeaderLoggedIn from './form/HeaderLoggedIn';
-import HeaderLoggedOut from './form/HeaderLoggedOut';
+import HeaderLoggedIn from './Login/HeaderLoggedIn';
+import HeaderLoggedOut from './Login/HeaderLoggedOut';
 import { Link } from 'react-router';
 
 class Header extends React.Component {
@@ -30,7 +30,7 @@ class Header extends React.Component {
   render() {
     var loggedInOrOut = <HeaderLoggedOut />;
 
-    if (!this.state.isLoggedIn) {
+    if (this.state.isLoggedIn) {
       loggedInOrOut = <HeaderLoggedIn />;
     }
     return (
